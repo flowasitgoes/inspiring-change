@@ -1,6 +1,25 @@
 import nodemailer from 'nodemailer';
 
 export default async function handler(req, res) {
+  // 添加 CORS 標頭
+  res.setHeader('Access-Control-Allow-Origin', '*');
+  res.setHeader('Access-Control-Allow-Methods', 'GET, POST, OPTIONS');
+  res.setHeader('Access-Control-Allow-Headers', 'Content-Type');
+
+  // 處理 OPTIONS 請求
+  if (req.method === 'OPTIONS') {
+    return res.status(200).end();
+  }
+
+  // 測試端點 - GET 請求
+  if (req.method === 'GET') {
+    return res.status(200).json({ 
+      code: '0000', 
+      message: 'API 端點正常運作',
+      timestamp: new Date().toISOString()
+    });
+  }
+
   // 只允許 POST 請求
   if (req.method !== 'POST') {
     return res.status(405).json({ code: '9999', message: '只允許 POST 請求' });

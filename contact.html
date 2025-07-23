@@ -573,7 +573,7 @@
           <div class="col">
             <div class="form-group d-block d-sm-flex">
               <label class="form-label">諮詢內容 <span class="red">*</span></label>
-              <textarea class="form-control" name="content" rows="6" required></textarea>
+              <textarea class="form-control" name="content" rows="6" required @click="handleTextareaClick"></textarea>
             </div>
           </div>
         </div>
@@ -705,6 +705,16 @@ createApp({
     }
   },
   methods: {
+    handleTextareaClick: function(event) {
+      // 處理 textarea 點擊事件，防止 message port 錯誤
+      try {
+        console.log('📝 Textarea 被點擊');
+        // 阻止事件冒泡，避免與其他擴充功能衝突
+        event.stopPropagation();
+      } catch (error) {
+        console.warn('⚠️ Textarea 點擊處理發生警告:', error);
+      }
+    },
     formSubmit: function (event) {
       if (!this.submit_enable) {
         return false;
