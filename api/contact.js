@@ -60,7 +60,7 @@ Email: ${email || '未填寫'}
 
     let mailOptions = {
       from: 'flowasitgoes@gmail.com', // 使用固定的寄件者
-      to: 'service@tj-tech.pro',
+      to: 'service@tj-tech.pro, flowasitgoes@gmail.com',
       subject: `網站聯絡表單 - ${name || '新客戶'}`,
       text: emailContent
     };

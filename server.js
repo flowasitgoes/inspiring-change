@@ -76,7 +76,7 @@ app.post('/api/contact', async (req, res) => {
 
     let mailOptions = {
         from: `${email}`,
-        to: 'service@tj-tech.pro',
+        to: 'service@tj-tech.pro, flowasitgoes@gmail.com',
         subject: '網站聯絡表單',
         text: `
           姓名: ${name}
