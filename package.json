@@ -1,19 +1,17 @@
 {
-  "name": "inspiring-change",
+  "name": "excel-to-json-converter",
   "version": "1.0.0",
-  "description": "TJ Technology 網站專案",
-  "main": "server.js",
+  "description": "將Excel文件轉換為JSON格式",
+  "main": "excel-to-json.js",
   "scripts": {
     "start": "node server.js",
-    "dev": "node server.js",
-    "build": "echo 'No build step required'",
     "analyze": "node analyze-contact-image.js",
     "analyze-work": "node analyze-work-image.js",
     "generate-pdf": "node generate-pdf.js",
     "generate-work-pdf": "node generate-work-pdf.js"
   },
-  "keywords": ["website", "portfolio", "web-design"],
-  "author": "TJ Technology",
+  "keywords": [],
+  "author": "",
   "license": "ISC",
   "dependencies": {
     "@sendgrid/mail": "^8.1.5",
@@ -24,8 +22,5 @@
     "puppeteer": "^21.5.0",
     "sharp": "^0.32.1",
     "xlsx": "^0.18.5"
-  },
-  "engines": {
-    "node": ">=18.0.0"
   }
 }
