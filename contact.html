@@ -573,7 +573,7 @@
           <div class="col">
             <div class="form-group d-block d-sm-flex">
               <label class="form-label">諮詢內容 <span class="red">*</span></label>
-              <textarea class="form-control" name="content" rows="6" required @click="handleTextareaClick"></textarea>
+              <textarea class="form-control" name="content" rows="6" required></textarea>
             </div>
           </div>
         </div>
@@ -705,16 +705,6 @@ createApp({
     }
   },
   methods: {
-    handleTextareaClick: function(event) {
-      // 處理 textarea 點擊事件，防止 message port 錯誤
-      try {
-        console.log('📝 Textarea 被點擊');
-        // 阻止事件冒泡，避免與其他擴充功能衝突
-        event.stopPropagation();
-      } catch (error) {
-        console.warn('⚠️ Textarea 點擊處理發生警告:', error);
-      }
-    },
     formSubmit: function (event) {
       if (!this.submit_enable) {
         return false;
@@ -730,21 +720,9 @@ createApp({
 
       this.submit_enable = false;
 
-      // 除錯資訊：顯示發送的資料
-      console.log('📤 準備發送郵件...');
-      console.log('📤 API 端點:', api);
-      console.log('📤 發送資料:', JSON.stringify(data, null, 2));
-      console.log('📤 表單資料驗證:');
-      console.log('  - 姓名:', name);
-      console.log('  - 電話:', phone);
-      console.log('  - 信箱:', email);
-      console.log('  - 主旨:', subject);
-      console.log('  - 內容:', content);
-
       if (typeof window['gtag'] === 'function' && email && email.includes('@')) {
         gtag('set', 'user_data', { "email": email });
         gtag('event', 'form_submit', { 'send_to': 'AW-986947927' });
-        console.log('📊 Google Analytics 表單提交事件已觸發');
       }
 
       fetch(api, {
@@ -756,47 +734,19 @@ createApp({
       })
       .then(response => response.json())
       .then(response => {
-        console.log('📧 郵件發送回應:', response);
-        console.log('📧 回應代碼:', response.code);
-        console.log('📧 回應訊息:', response.message || '無訊息');
-        console.log('📧 完整回應物件:', JSON.stringify(response, null, 2));
-        
         if (response.code === '0000') {
-          console.log('✅ 郵件發送成功!');
           if (typeof window['gtag'] === 'function') {
             gtag('event', 'conversion', {"send_to": "AW-986947927/olsxCNq4zesYENfCztYD"});
-            console.log('📊 Google Analytics 事件已觸發');
           }
           this.submit_success = true;
         } else {
-          console.error('❌ 郵件發送失敗 - 伺服器回應錯誤');
-          console.error('❌ 錯誤代碼:', response.code);
-          console.error('❌ 錯誤訊息:', response.message || '未知錯誤');
-          console.error('❌ 完整錯誤回應:', response);
           alert('寄信失敗，請稍後再試');
         }
       })
-      .catch(error => {
-        console.error('💥 郵件發送發生異常錯誤:');
-        console.error('💥 錯誤類型:', error.name);
-        console.error('💥 錯誤訊息:', error.message);
-        console.error('💥 錯誤堆疊:', error.stack);
-        console.error('💥 完整錯誤物件:', error);
-        
-        // 檢查網路連接問題
-        if (error.name === 'TypeError' && error.message.includes('fetch')) {
-          console.error('🌐 可能是網路連接問題');
-        }
-        
-        // 檢查伺服器回應問題
-        if (error.name === 'SyntaxError') {
-          console.error('📡 可能是伺服器回應格式錯誤');
-        }
-        
+      .catch(() => {
         alert('寄信失敗，請稍後再試');
       })
       .finally(() => {
-        console.log('🏁 郵件發送流程結束');
         this.submit_enable = true;
       });
 
