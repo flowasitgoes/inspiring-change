@@ -8,8 +8,8 @@
     { "source": "/contact", "destination": "/contact.html" }
   ],
   "functions": {
-    "api/contact.js": {
-      "runtime": "nodejs18.x"
+    "api/contact/index.js": {
+      "maxDuration": 30
     }
   }
 } 
