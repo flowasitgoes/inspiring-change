@@ -29,7 +29,7 @@ export default async function handler(req, res) {
     console.log('開始設定郵件傳輸器...');
     
     // 使用 Gmail SMTP 設定
-    let transporter = nodemailer.createTransporter({
+    let transporter = nodemailer.createTransport({
       service: 'gmail',
       auth: {
         user: 'flowasitgoes@gmail.com',
