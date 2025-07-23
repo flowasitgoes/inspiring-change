@@ -6,10 +6,5 @@
     { "source": "/work", "destination": "/work.html" },
     { "source": "/service", "destination": "/service.html" },
     { "source": "/contact", "destination": "/contact.html" }
-  ],
-  "functions": {
-    "api/contact/index.js": {
-      "maxDuration": 30
-    }
-  }
+  ]
 } 

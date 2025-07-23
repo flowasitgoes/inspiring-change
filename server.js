@@ -59,7 +59,7 @@ app.get('/contact.html', (req, res) => {
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
-// 注意：聯絡表單 API 已移至 api/contact/index.js (Vercel Serverless Function)
+// 聯絡表單 API 已移至 api/contact.js (Vercel API 路由)
 
 app.listen(port, () => {
     console.log(`服务器运行在 http://localhost:${port}`);
