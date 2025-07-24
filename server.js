@@ -16,7 +16,7 @@ app.get('/', (req, res) => {
 
 // 作品頁路由
 app.get('/work', (req, res) => {
-    res.sendFile(path.join(__dirname, 'work.html'));
+    res.sendFile(path.join(__dirname, 'public/work.html'));
 });
 
 app.get('/work-info', (req, res) => {
@@ -25,17 +25,17 @@ app.get('/work-info', (req, res) => {
 
 // 聯絡頁路由
 app.get('/contact', (req, res) => {
-    res.sendFile(path.join(__dirname, 'contact.html'));
+    res.sendFile(path.join(__dirname, 'public/contact.html'));
 });
 
 // 關於我們頁路由
 app.get('/about', (req, res) => {
-    res.sendFile(path.join(__dirname, 'about.html'));
+    res.sendFile(path.join(__dirname, 'public/about.html'));
 });
 
 // 服務頁路由
 app.get('/service', (req, res) => {
-    res.sendFile(path.join(__dirname, 'service.html'));
+    res.sendFile(path.join(__dirname, 'public/service.html'));
 });
 
 app.get('/service-info', (req, res) => {
