@@ -6,7 +6,8 @@ const port = 3000;
 
 // 提供靜態文件
 app.use(express.static(path.join(__dirname)));
-app.use('/assets', express.static(path.join(__dirname, 'assets')));
+app.use(express.static(path.join(__dirname, 'public'))); // Serves files directly from public
+app.use('/assets', express.static(path.join(__dirname, 'public/assets'))); // Maps /assets to public/assets
 
 // 首頁路由
 app.get('/', (req, res) => {
