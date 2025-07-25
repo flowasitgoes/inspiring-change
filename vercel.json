@@ -25,19 +25,19 @@
     },
     {
       "src": "/about",
-      "dest": "/about.html"
+      "dest": "/public/about.html"
     },
     {
       "src": "/work",
-      "dest": "/work.html"
+      "dest": "/public/work.html"
     },
     {
       "src": "/service",
-      "dest": "/service.html"
+      "dest": "/public/service.html"
     },
     {
       "src": "/contact",
-      "dest": "/contact.html"
+      "dest": "/public/contact.html"
     },
     {
       "src": "/(.*\\.(css|js|png|jpg|jpeg|gif|svg|ico|webp))",
