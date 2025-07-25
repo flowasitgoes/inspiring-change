@@ -16654,7 +16654,7 @@ yx-axis
 }
 
 .header-light #header .logo a {
-    background-image: /assets/images/logo.png;
+    background-image: url(/assets/images/logo.png);
 }
 
 .header-light #header a.tel {
@@ -16775,7 +16775,7 @@ yx-axis
 
 @media (max-width: 991.98px) {
     #header .logo a {
-        background-image: /assets/images/logo.png;
+        background-image: url(/assets/images/logo.png);
     }
 }
 
@@ -18935,7 +18935,7 @@ body:after {
 .slogan-info.gray-bg {
     background: #fefefe;
     background: radial-gradient(ellipse at center, #b7b7b7 0%, #dcdcdc 100%);
-    background-image: url(/assets/hero-background-image.png);
+    background-image: url(../hero-background-image.png);
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;

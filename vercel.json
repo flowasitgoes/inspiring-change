@@ -6,6 +6,10 @@
       "use": "@vercel/node"
     },
     {
+      "src": "public/**/*",
+      "use": "@vercel/static"
+    },
+    {
       "src": "*.html",
       "use": "@vercel/static"
     }
@@ -14,6 +18,10 @@
     {
       "src": "/api/(.*)",
       "dest": "/api/$1"
+    },
+    {
+      "src": "/assets/(.*)",
+      "dest": "/public/assets/$1"
     },
     {
       "src": "/about",
@@ -30,6 +38,14 @@
     {
       "src": "/contact",
       "dest": "/contact.html"
+    },
+    {
+      "src": "/(.*\\.(css|js|png|jpg|jpeg|gif|svg|ico|webp))",
+      "dest": "/public/$1"
+    },
+    {
+      "src": "/(.*)",
+      "dest": "/$1"
     }
   ]
 } 
