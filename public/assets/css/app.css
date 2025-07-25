@@ -14459,8 +14459,8 @@ img {
 
 @font-face {
     font-family: "slick";
-    src: url(../fonts/slick.eot?ced611daf7709cc778da928fec876475);
-    src: url(../fonts/slick.eot?ced611daf7709cc778da928fec876475) format("embedded-opentype"), url(../fonts/slick.woff?b7c9e1e479de3b53f1e4e30ebac2403a) format("woff"), url(../fonts/slick.ttf?d41f55a78e6f49a5512878df1737e58a) format("truetype"), url(../fonts/slick.svg?f97e3bbf73254b0112091d0192f17aec) format("svg");
+    /* src: url(../fonts/slick.eot?ced611daf7709cc778da928fec876475); */
+    /* src: url(../fonts/slick.eot?ced611daf7709cc778da928fec876475) format("embedded-opentype"), url(../fonts/slick.woff?b7c9e1e479de3b53f1e4e30ebac2403a) format("woff"), url(../fonts/slick.ttf?d41f55a78e6f49a5512878df1737e58a) format("truetype"), url(../fonts/slick.svg?f97e3bbf73254b0112091d0192f17aec) format("svg"); */
     font-weight: normal;
     font-style: normal;
 }
@@ -18169,15 +18169,15 @@ body:after {
 }
 
 .home-banner .triangles .top {
-    background-image: url(../images/tri-top.png?b3f250fbda7fe29ddcb8c034da6f7f4c);
+    /* background-image: url(../images/tri-top.png?b3f250fbda7fe29ddcb8c034da6f7f4c); */
 }
 
 .home-banner .triangles .right {
-    background-image: url(../images/tri-right.png?580b1081f4cb010817f93c9aa0d940c8);
+    /* background-image: url(../images/tri-right.png?580b1081f4cb010817f93c9aa0d940c8); */
 }
 
 .home-banner .triangles .left {
-    background-image: url(../images/tri-left.png?27540a8f9db13360a93d1b1594135f85);
+    /* background-image: url(../images/tri-left.png?27540a8f9db13360a93d1b1594135f85); */
 }
 
 .home-banner .container {
@@ -18740,7 +18740,7 @@ body:after {
     position: absolute;
     left: 0;
     top: 0;
-    background: url(../images/vision-item.png?807610ff45e5c2d419073122e712c1ce) left center no-repeat;
+    /* background: url(../images/vision-item.png?807610ff45e5c2d419073122e712c1ce) left center no-repeat; */
 }
 
 .vision .block .table-box .item .total {
