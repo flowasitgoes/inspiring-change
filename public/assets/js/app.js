@@ -17860,29 +17860,30 @@ $(document).ready(function() {
             }
         });
     });
-    $("#bg-video").each(function() {
-        var $this = $("#bg-video");
-        $this.YTPlayer({
-            mute: true,
-            autoPlay: true,
-            videoURL: 'https://www.youtube.com/watch?v=b8-3_Etyc1o',
-            useOnMobile: false,
-            showYTLogo: false,
-            showControls: false,
-            startAt: 0 // events: {
-                //'onReady': onPlayerReady
-                //}
-        });
-        $this.show();
+    // 暫時註釋掉 YouTube 播放器初始化，因為影片無法在嵌入式播放器中播放
+    // $("#bg-video").each(function() {
+    //     var $this = $("#bg-video");
+    //     $this.YTPlayer({
+    //         mute: true,
+    //         autoPlay: true,
+    //         videoURL: 'https://www.youtube.com/watch?v=b8-3_Etyc1o',
+    //         useOnMobile: false,
+    //         showYTLogo: false,
+    //         showControls: false,
+    //         startAt: 0 // events: {
+    //             //'onReady': onPlayerReady
+    //             //}
+    //     });
+    //     $this.show();
 
-        function onPlayerReady(event) {
-            event.target.playVideo();
-        } // if ( $("html").hasClass("no-touch") ) {
-        //     setTimeout(function () {
-        //         $this.fadeOut(1000);
-        //     }, 1500);
-        // }
-    });
+    //     function onPlayerReady(event) {
+    //         event.target.playVideo();
+    //     } // if ( $("html").hasClass("no-touch") ) {
+    //     //     setTimeout(function () {
+    //     //         $this.fadeOut(1000);
+    //     //     }, 1500);
+    //     // }
+    // });
     $(".has-animation li, .go").each(function() {
         var item = $(this);
         $(window).scroll(function() {
